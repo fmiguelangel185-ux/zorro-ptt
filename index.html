@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#070a0d">
+  <title>ZORRO PTT</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell" aria-live="polite">
+    <section class="panel" id="panel">
+      <div class="brand">ZORRO <span>PTT</span></div>
+
+      <div id="loginView" class="view">
+        <p class="status-label">ACCESO</p>
+        <form id="loginForm" autocomplete="off">
+          <input id="password" type="password" inputmode="text" autocomplete="current-password" placeholder="Contraseña" aria-label="Contraseña" required>
+          <button class="login-btn" type="submit">LOGIN</button>
+        </form>
+        <p id="loginMessage" class="message"></p>
+      </div>
+
+      <div id="pttView" class="view hidden">
+        <div class="channel-line">
+          <span id="statusDot" class="status-dot"></span>
+          <span id="statusText">CONECTANDO...</span>
+        </div>
+
+        <button id="pttButton" class="ptt free" type="button" aria-label="Mantén presionado para hablar" disabled>
+          <span>PTT</span>
+          <small>MANTÉN PRESIONADO</small>
+        </button>
+
+        <p id="peerText" class="peer-text">Esperando al segundo usuario...</p>
+      </div>
+    </section>
+  </main>
+
+  <audio id="remoteAudio" autoplay playsinline></audio>
+  <script src="/app.js" defer></script>
+</body>
+</html>
